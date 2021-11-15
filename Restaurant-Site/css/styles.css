@@ -71,6 +71,10 @@ body {
 	background: #e7e7e7;
 }
 
+#nav-list a i {
+	font-size: 1.8em;
+}
+
 #nav-list a span {
 	font-size: 1.8em;
 }
@@ -88,8 +92,4 @@ body {
 	color:  #557c3e;
 	text-align: right;
 	padding-right: 15px;
-}
-
-#navbarSupportedContent {
-
 }
