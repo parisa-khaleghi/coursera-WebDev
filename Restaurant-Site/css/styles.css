@@ -113,6 +113,44 @@ body {
 	border: 2px solid #3f0c1f;
 	margin-top: 30px;
 	padding: 0;
+	background-position: center;
+}
+
+#menu-tile, #specials-tile, #map-tile {
+	height: 250px;
+	width: 100%;
+	margin-bottom: 15px;
+	margin-top: 15px;
+	position: relative;
+	border: 2px solid #3F0C1F;
+	overflow: hidden;
+}
+
+#menu-tile:hover, #specials-tile:hover, #map-tile:hover {
+	box-shadow: 0 1px 5px 1px #CCCCCC;
+}
+
+#menu-tile {
+	background: url("../images/menu-tile.jpeg") no-repeat;
+	background-position: center;
+}
+
+#specials-tile {
+	background: url("../images/specials-tile.jpeg") no-repeat;
+	background-position: center;
+}
+
+#menu-tile span, #specials-tile span, #map-tile span {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	text-align: center;
+	font-size: 1.6em;
+	text-transform: uppercase;
+	background-color: #000;
+	color: #fff;
+	opacity: .8;
 }
 /* END HOME PAGE */
 
@@ -148,11 +186,10 @@ body {
 /************** Small devices only **************/
 @media (min-width: 768px) and (max-width: 991) {
 
-
 }
 
 /************** Extra Small devices only **************/
-@media (max-width: 767px) {
+@media (min-width: 480px) and (max-width: 767px) {
 	/* HEADER */
 	.navbar-brand {
 		padding-top: 10px;
@@ -182,4 +219,28 @@ body {
 		margin-right: 5px;
 	}
 	/* END HEADER */
+
+	/* HOME PAGE */
+	#menu-tile, #specials-tile {
+		/*width: 360px;*/
+		margin: 0 auto 15px;
+	}
+	/* END HOME PAGE */
+}
+
+/************** Super extra Small devices only **************/
+@media (max-width: 479px) {
+	/* HEADER */
+	.navbar-brand h1 {  
+		padding-top: 5px;
+		font-size: 4vw;
+	}
+	/* END HEADER */
+
+	/* HOME PAGE */
+	#menu-tile, #specials-tile {
+		width: 280px;
+		margin: 0 auto 15px;
+	}
+	/* END HOME PAGE */
 }
