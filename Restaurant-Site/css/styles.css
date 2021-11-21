@@ -13,14 +13,10 @@ body {
 }
 
 #logo-img {
-	background: url("../images/restaurant-logo_large.png") no-repeat;
-	width: 150px;
-	height: 150px;
-	margin: 10px 15px 10px 0;
-}
-
-.pull-left {
-	float: left;
+	background: url("../images/restaurant-logo_medium.png") no-repeat;
+	width: 100px;
+	height: 100px;
+	margin: 5px 5px 5px 0;
 }
 
 .navbar-brand {
@@ -54,8 +50,12 @@ body {
 	vertical-align: middle;
 }
 
-.navbar-right {
-	display: inline;
+.navbar-header {
+	width: 100%;
+}
+
+#menu-btn {
+	float: right;
 }
 
 #nav-list {
@@ -92,7 +92,7 @@ body {
 	color:  #557c3e;
 	text-align: right;
 	padding-right: 15px;
-}
+} 
 
 .navbar-header button.navbar-toggler, .navbar-header .icon-bar {
 	border: 1px solid #61122f;
@@ -107,13 +107,25 @@ body {
 
 /* HOME PAGE */
 .container .jumbotron {
+	background: url("../images/jumbotron_768.jpeg") no-repeat;
+	height: 432px;
 	box-shadow: 0 0 50px #3f0c1f;
 	border: 2px solid #3f0c1f;
+	margin-top: 30px;
+	padding: 0;
 }
 /* END HOME PAGE */
 
 /************** Large devices only **************/
 @media (min-width: 1200px) {
+
+	#logo-img {
+		background: url("../images/restaurant-logo_large.png") no-repeat;
+		width: 150px;
+		height: 150px;
+		margin: 10px 15px 10px 0;
+	}
+
 	/* HOME PAGE */
 	.container .jumbotron {
 		background: url("../images/jumbotron_1200.jpeg") no-repeat;
@@ -124,31 +136,19 @@ body {
 
 /************** Medium devices only **************/
 @media (min-width: 992px) and (max-width: 1199) {
-	/* HEADER */
-	#logo-img {
-		background: url("../images/restaurant-logo_medium.png") no-repeat;
-		width: 100px;
-		height: 100px;
-		margin: 5px 5px 5px 0;
-	}
-	/* END HEADER */
-
 	/* HOME PAGE */
 	.container .jumbotron {
-		background: url("../images/jumbotron_1200.jpeg") no-repeat;
+		background: url("../images/jumbotron_992.jpeg") no-repeat;
 		height: 558px;
 	}
 	/* END HOME PAGE */
+
 }
 
 /************** Small devices only **************/
 @media (min-width: 768px) and (max-width: 991) {
-	/* HOME PAGE */
-	.container .jumbotron {
-		background: url("../images/jumbotron_768.jpeg") no-repeat;
-		height: 432px;
-	}
-	/* END HOME PAGE */
+
+
 }
 
 /************** Extra Small devices only **************/
@@ -161,7 +161,7 @@ body {
 
 	.navbar-brand h1 {  /* Restaurant Name */
 		padding-top: 10px;
-		font-size: 5vw;
+		font-size: 4vw;
 	}
 
 	.navbar-brand p { /* Kosher cert */
@@ -177,16 +177,9 @@ body {
 		font-size: 1.2em;
 	}
 
-	#navbarSupportedContent a span{
+	#navbarSupportedContent a i{
 		font-size: 1em;
 		margin-right: 5px;
 	}
 	/* END HEADER */
-
-	/* HOME PAGE */
-	.container .jumbotron {
-		margin-top: 30px;
-		padding: 0;
-	}
-	/* END HOME PAGE */
 }
