@@ -12,13 +12,13 @@ $(function () {
 (function (global){
 	var dc = {};
 
-	var homehtml = "Restaurant-Site/snippets/home-snippet.html";
+	var homehtml = "/snippets/home-snippet.html";
 	var allCategoriesURL = "http://davids-restaurant.herokuapp.com/categories.json";
-	var categoriesTitleHtml = "Restaurant-Site/snippets/categories-title-snippet.html";
-	var categoryHtml = "Restaurant-Site/snippets/category-snippet.html";
+	var categoriesTitleHtml = "/snippets/categories-title-snippet.html";
+	var categoryHtml = "/snippets/category-snippet.html";
 	var menuItemsUrl = "http://davids-restaurant.herokuapp.com/menu_items.json?category=";
-	var menuItemsTitleHtml = "Restaurant-Site/snippets/menu-items-title.html";
-	var menuItemHtml = "Restaurant-Site/snippets/menu-item.html";
+	var menuItemsTitleHtml = "/snippets/menu-items-title.html";
+	var menuItemHtml = "/snippets/menu-item.html";
 
 	// Convinience function for inserting innerHTML for 'select'
 	var insertHtml = function (selector, html) {
