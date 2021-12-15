@@ -41,6 +41,22 @@ $(function () {
 		return string;
 	};
 
+	// On page load (before images or CSS)
+	document.addEventListener("DOMContentLoaded", function (event) {
+		// On first load show home view
+		showLoading("#main-content");
+		$ajaxUtils.sendGetRequest(
+					homehtml,
+					function (homehtml) {
+						var newHtml = randomCategoryShortName();
+						insertHtml('#main-content', newHtml);
+					},
+					false);
+		// $ajaxUtils.sendGetRequest(homehtml, function (responseText) {
+		// 	document.querySelector("#main-content").innerHTML = responseText;
+		// }, false );
+	});
+
 	// Remove the class 'active' from the home and switch to Menu Button
 	var switchMenuToActive = function () {
 		// Remove 'active' from home button
@@ -56,23 +72,18 @@ $(function () {
 		}
 	}
 
-	// On page load (before images or CSS)
-	document.addEventListener("DOMContentLoaded", function (event) {
-		// On first load show home view
-		showLoading("#main-content");
-		$ajaxUtils.sendGetRequest(homehtml, function (responseText) {
-			document.querySelector("#main-content").innerHTML = responseText;
-		}, false );
-	});
-
 	var randomCategoryShortName = function () {
+		var html = homehtml;
 		var menu = ["A", "B", "C", "C2", "Cm", "CSR", "CU", "D", 
 					"Dk", "DS", "F", "Fr", "FY", "L", "NF", "NL", 
 					"NS", "Pf", "SO", "Sp", "SR", "SS", "T", "V", "Vg"];
-		return menu[Math.floor(Math.random() * menu.length)];
+		html = insertProperty (html, 
+							   "randomCategoryShortName", 
+							   menu[Math.floor(Math.random() * menu.length)]);
+		return html;
 	}
 
-	// Load thhe menu categories view
+	// Load the menu categories view
 	dc.loadMenuCategories = function (){
 		showLoading('#main-content');
 		$ajaxUtils.sendGetRequest(
