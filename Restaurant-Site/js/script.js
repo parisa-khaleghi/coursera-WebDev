@@ -73,12 +73,6 @@ $(function () {
 		html = insertProperty (html, 
 							   "randomCategoryShortName", 
 							   menu[Math.floor(Math.random() * menu.length)]);
-		$ajaxUtils.sendGetRequest(
-					homehtml,
-					function (homehtml) {
-						insertHtml('#main-content', html);
-					},
-					false);
 	}
 
 	// Load the menu categories view
