@@ -45,16 +45,9 @@ $(function () {
 	document.addEventListener("DOMContentLoaded", function (event) {
 		// On first load show home view
 		showLoading("#main-content");
-		$ajaxUtils.sendGetRequest(
-					homehtml,
-					function (homehtml) {
-						var newHtml = randomCategoryShortName();
-						insertHtml('#main-content', newHtml);
-					},
-					false);
-		// $ajaxUtils.sendGetRequest(homehtml, function (responseText) {
-		// 	document.querySelector("#main-content").innerHTML = responseText;
-		// }, false );
+		$ajaxUtils.sendGetRequest(homehtml, function (responseText) {
+			document.querySelector("#main-content").innerHTML = responseText;
+		}, false );
 	});
 
 	// Remove the class 'active' from the home and switch to Menu Button
@@ -80,7 +73,12 @@ $(function () {
 		html = insertProperty (html, 
 							   "randomCategoryShortName", 
 							   menu[Math.floor(Math.random() * menu.length)]);
-		return html;
+		$ajaxUtils.sendGetRequest(
+					homehtml,
+					function (homehtml) {
+						insertHtml('#main-content', html);
+					},
+					false);
 	}
 
 	// Load the menu categories view
