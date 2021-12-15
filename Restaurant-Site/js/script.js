@@ -46,7 +46,10 @@ $(function () {
 		// On first load show home view
 		showLoading("#main-content");
 		$ajaxUtils.sendGetRequest(homehtml, function (responseText) {
-			document.querySelector("#main-content").innerHTML = responseText;
+			var res = insertProperty (responseText, 
+							   "randomCategoryShortName", 
+							   randomCategoryShortName());
+			document.querySelector("#main-content").innerHTML = res;
 		}, false );
 	});
 
@@ -66,13 +69,10 @@ $(function () {
 	}
 
 	var randomCategoryShortName = function () {
-		var html = homehtml;
 		var menu = ["A", "B", "C", "C2", "Cm", "CSR", "CU", "D", 
 					"Dk", "DS", "F", "Fr", "FY", "L", "NF", "NL", 
 					"NS", "Pf", "SO", "Sp", "SR", "SS", "T", "V", "Vg"];
-		html = insertProperty (html, 
-							   "randomCategoryShortName", 
-							   menu[Math.floor(Math.random() * menu.length)]);
+		return menu[Math.floor(Math.random() * menu.length)];
 	}
 
 	// Load the menu categories view
