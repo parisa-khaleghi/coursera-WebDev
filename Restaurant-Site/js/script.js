@@ -65,6 +65,13 @@ $(function () {
 		}, false );
 	});
 
+	var randomCategoryShortName = function () {
+		var menu = ["A", "B" "C", "C2", "Cm", "CSR", "CU", "D", 
+					"Dk", "DS", "F", "Fr", "FY", "L", "NF", "NL", 
+					"NS", "Pf", "SO", "Sp", "SR", "SS", "T", "V", "Vg"];
+		return Math.floor(Math.random() * menu.length);
+	}
+
 	// Load thhe menu categories view
 	dc.loadMenuCategories = function (){
 		showLoading('#main-content');
